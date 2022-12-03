@@ -1,5 +1,7 @@
 # Blockhound Issue
 
+See https://github.com/reactor/BlockHound/issues/308
+
 ```text
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project blockhound-issue: There are test failures.
 [ERROR] 

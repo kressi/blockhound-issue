@@ -7,11 +7,14 @@ jobs:
   test-maven:
     name: Running test with Maven
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [11, 17, 18, 19]
     steps:
       - uses: actions/checkout@v3
       - uses: s4u/setup-maven-action@v1.4.0
         with:
-          java-version: 17
-          maven-version: 3.8.5
+          java-version: ${{ matrix.java }}
+          maven-version: 3.8.6
       - run: mvn --version
-      - run: mvn clean test
+      - run: mvn clean test -Djava.version=${{ matrix.java }}
